@@ -49,7 +49,9 @@ const fileExt = [
 fileExt.forEach(a => {
     if (pathname.endsWith(a)) {
         window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
-    } else {
+    } else if (pathname.trim() === "") {
         window.location.href = `/`
+    } else {
+        window.location.href = `https://github.com/nikeedev/${repo_name}/`;
     }
 })
