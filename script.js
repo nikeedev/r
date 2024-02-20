@@ -1,5 +1,9 @@
 // let pathname = "/r/square/clean_square.png"
+// let pathname = "/r/square/"
 let pathname = window.location.pathname
+// let pathname = window.location.href.split('?')[1];
+
+console.log(pathname)
 
 pathname = pathname.substring(1, pathname.length);
 
@@ -44,14 +48,16 @@ const fileExt = [
     "avi",
     "mov",
     "wmv",
+    "rs",
 ];
 
-fileExt.forEach(a => {
-    if (pathname.endsWith(a)) {
-        window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
-    } else if (pathname.trim() === "") {
-        window.location.href = `/`
-    } else {
-        window.location.href = `https://github.com/nikeedev/${repo_name}/`;
-    }
-})
+dothis: fileExt.forEach(a => {
+        if (pathname.endsWith(a)) {
+            window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
+        } else if (pathname.trim() === "") {
+            window.location.href = `/`
+        } else {
+            window.location.href = `https://github.com/nikeedev/${repo_name}/`;
+        }
+    });
+
