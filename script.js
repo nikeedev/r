@@ -12,8 +12,8 @@ pathname = pathname.split('/');
 console.log(pathname)
 
 let repo_name;
-if (pathname.length >= 2) {
-    console.log(pathname)
+if (pathname.length > 1) {
+    console.log("more than 1", pathname)
 
     repo_name = pathname[1];
     delete pathname[1];
