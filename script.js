@@ -12,7 +12,7 @@ pathname = pathname.split('/');
 console.log(pathname)
 
 let repo_name;
-if (pathname.length > 1) {
+if (pathname.length >= 2) {
     console.log("more than 1", pathname)
 
     repo_name = pathname[1];
@@ -23,14 +23,19 @@ if (pathname.length > 1) {
 pathname = pathname.join("");
 console.log(pathname);
 
+let found_social = false;
 
 if (pathname.trim() == "discord" || pathname.trim() == "disc") {
+    found_social = true;
     window.location.href = "https://discord.com/users/408288183554670592"
 } else if (pathname.trim() == "github" || pathname.trim() == "git" || pathname.trim() == "gh") {
+    found_social = true;
     window.location.href = "https://github.com/nikeedev"
 } else if (pathname.trim() == "youtube" || pathname.trim() == "yt") {
+    found_social = true;
     window.location.href = "https://www.youtube.com/@nikeedev"
 } else if (pathname.trim() == "twitter" || pathname.trim() == "tw" || pathname.trim() == "twtr") {
+    found_social = true;
     window.location.href = "https://twitter.com/nikeedev"
 }
 
@@ -67,13 +72,14 @@ const fileExt = [
 
 let found = false;
 
-fileExt.forEach(a => {
-    if (pathname.endsWith(a)) {
-        found = true;
-        window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
-    }
-});
-
+if (found_social != true) {
+    fileExt.forEach(a => {
+        if (pathname.endsWith(a)) {
+            found = true;
+            window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
+        }
+    });
+}
 
 if (pathname.trim() === "" && !found) {
     window.location.href = `/`
