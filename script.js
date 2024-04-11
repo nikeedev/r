@@ -1,6 +1,6 @@
 // let pathname = "/r/square/clean_square.png"
-// let pathname = "/r/square/"
-let pathname = window.location.pathname
+let pathname = "/square/"
+// let pathname = window.location.pathname
 // let pathname = window.location.href.split('?')[1];
 
 console.log(pathname)
@@ -51,13 +51,19 @@ const fileExt = [
     "rs",
 ];
 
-dothis: fileExt.forEach(a => {
-        if (pathname.endsWith(a)) {
-            window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
-        } else if (pathname.trim() === "") {
-            window.location.href = `/`
-        } else {
-            window.location.href = `https://github.com/nikeedev/${repo_name}/`;
-        }
-    });
+let found = false;
+
+fileExt.forEach(a => {
+    if (pathname.endsWith(a)) {
+        found = true;
+        window.location.href = `https://github.com/nikeedev/${repo_name}/blob/master${pathname}`;
+    }
+});
+
+
+if (pathname.trim() === "" && !found) {
+    window.location.href = `/`
+} else {
+    window.location.href = `https://github.com/nikeedev/${repo_name}/`;
+}
 
