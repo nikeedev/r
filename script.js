@@ -12,7 +12,7 @@ pathname = pathname.split('/');
 console.log(pathname)
 
 let repo_name;
-if (pathname.length < 2) {
+if (pathname.length >= 2) {
     console.log(pathname)
 
     repo_name = pathname[1];
@@ -20,7 +20,7 @@ if (pathname.length < 2) {
 }
 
 
-pathname = pathname.join();
+pathname = pathname.join("");
 console.log(pathname);
 
 
