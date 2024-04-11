@@ -4,30 +4,30 @@
     let pathname = window.location.pathname
     // let pathname = window.location.href.split('?')[1];
 
-    console.log(pathname)
+    // console.log(pathname)
 
     pathname = pathname.substring(1, pathname.length);
-    console.log(pathname)
+    // console.log(pathname)
 
     pathname = pathname.split('/');
-    console.log(pathname)
+    // console.log(pathname)
 
     let file_name;
     if (pathname.length >= 2) {
-        console.log("more than 1", pathname)
+        // console.log("more than 1", pathname)
 
         file_name = pathname.slice(1).join("/");
-        console.log(file_name)
+        // console.log(file_name)
         console.log(pathname.slice(1).join("/"))
         for (let i = 1; i < pathname.length; i++) {
             delete pathname[i];
-            console.log(pathname)
+            // console.log(pathname)
         }
     }
 
 
     pathname = pathname.join("");
-    console.log(pathname);
+    // console.log(pathname);
 
     let found_social = false;
 
