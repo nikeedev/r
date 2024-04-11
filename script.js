@@ -24,7 +24,7 @@ pathname = pathname.join();
 console.log(pathname);
 
 
-if (pathname.trim() == "discord") {
+if (pathname.trim() == "discord" || pathname.trim() == "disc") {
     window.location.href = "https://discord.com/users/408288183554670592"
 } else if (pathname.trim() == "github" || pathname.trim() == "git" || pathname.trim() == "gh") {
     window.location.href = "https://github.com/nikeedev"
