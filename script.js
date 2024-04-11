@@ -1,24 +1,38 @@
 // let pathname = "/r/square/clean_square.png"
-let pathname = "/square/"
-// let pathname = window.location.pathname
+//let pathname = "/square/"
+let pathname = window.location.pathname
 // let pathname = window.location.href.split('?')[1];
 
 console.log(pathname)
 
 pathname = pathname.substring(1, pathname.length);
+console.log(pathname)
 
 pathname = pathname.split('/');
+console.log(pathname)
 
-delete pathname[0];
+let repo_name;
+if (pathname.length < 2) {
+    console.log(pathname)
 
-let repo_name = pathname[1];
-delete pathname[1];
+    repo_name = pathname[1];
+    delete pathname[1];
+}
 
 
-pathname = pathname.join("/");
-pathname = pathname.substring(1, pathname.length);
+pathname = pathname.join();
 console.log(pathname);
 
+
+if (pathname.trim() == "discord") {
+    window.location.href = "https://discord.com/users/408288183554670592"
+} else if (pathname.trim() == "github" || pathname.trim() == "git" || pathname.trim() == "gh") {
+    window.location.href = "https://github.com/nikeedev"
+} else if (pathname.trim() == "youtube" || pathname.trim() == "yt") {
+    window.location.href = "https://www.youtube.com/@nikeedev"
+} else if (pathname.trim() == "twitter" || pathname.trim() == "tw" || pathname.trim() == "twtr") {
+    window.location.href = "https://twitter.com/nikeedev"
+}
 
 const fileExt = [
     "html",
