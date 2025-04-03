@@ -46,7 +46,7 @@
         window.location.href = "https://www.youtube.com/@nikeedev"
         return;
     }
-    if (pathname.trim() == "twitter" || pathname.trim() == "tw" || pathname.trim() == "twtr") {
+    if (pathname.trim() == "bluesky" || pathname.trim() == "bsky") {
         found_social = true;
         window.location.href = "https://twitter.com/nikeedev"
         return;
@@ -90,7 +90,7 @@
 
     let found = false;
 
-    if (found_social != true) {
+    if (!found_social) {
         fileExt.forEach(a => {
             if (pathname.endsWith(a)) {
                 found = true;
