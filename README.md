@@ -13,6 +13,6 @@ The basic redirections redirect to GitHub:
 There is also redirections to my social pages:
 - r.nikee.dev/disc (/discord) -> my discord page
 - r.nikee.dev/gh (/github, /git) -> my github page
-- r.nikee.dev/twtr (/twitter) -> my twitter/x page
 - r.nikee.dev/yt (/youtube) -> my youtube page
+- r.nikee.dev/bsky (/bluesky) -> my bsky page
 ```
