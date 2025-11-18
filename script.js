@@ -1,8 +1,8 @@
 (function () {
     let final = "";
-    // let pathname = "/square/clean_square.png"
+    let pathname = "/square/clean_square.png"
     // let pathname = "/square/"
-    let pathname = window.location.pathname
+    // let pathname = window.location.pathname
     // let pathname = final.split('?')[1];
 
     // console.log(pathname)
@@ -10,7 +10,7 @@
     pathname = pathname.substring(1, pathname.length);
     //console.log(pathname)
 
-    let save_for_file = pathname;
+    let save_for_file = `${pathname}`;
     // ^^^^^^^^^^^^^^ save the repo and file name in case it isnt a social link 
 
 
@@ -95,15 +95,16 @@
     pathname = save_for_file;
 
     if (!found_social) { 
-        console.log(pathname)
+        // console.log(pathname)
         
         fileExt.forEach(a => {
+            // console.log(pathname)
             if (pathname.endsWith(a)) {
-                pathname = save_for_file.split("/");
+                let newpth = save_for_file.split("/");
                 found = true;
-                final = `https://github.com/nikeedev/${pathname[0]}/blob/master/${pathname[1]}`;
-                console.log(final);
+                final = `https://github.com/nikeedev/${newpth[0]}/blob/master/${newpth[1]}`;
             }
+            found
         });
     }
     
@@ -115,6 +116,6 @@
         final = `https://github.com/nikeedev/${pathname[0]}/`;
     }
     
-    console.log(final)
-    // window.location.href = final;
+    // console.log(final)
+    window.location.href = final;
 })()
