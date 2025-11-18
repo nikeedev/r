@@ -1,15 +1,20 @@
 (function () {
-    // let pathname = "/r/square/clean_square.png"
-    //let pathname = "/square/"
+    let final = "";
+    // let pathname = "/square/clean_square.png"
+    // let pathname = "/square/"
     let pathname = window.location.pathname
-    // let pathname = window.location.href.split('?')[1];
+    // let pathname = final.split('?')[1];
 
     // console.log(pathname)
 
     pathname = pathname.substring(1, pathname.length);
-    // console.log(pathname)
+    //console.log(pathname)
 
-    pathname = pathname.split('/');
+    let save_for_file = pathname;
+    // ^^^^^^^^^^^^^^ save the repo and file name in case it isnt a social link 
+
+
+    pathname = pathname.split('/'); 
     // console.log(pathname)
 
     let file_name;
@@ -18,7 +23,7 @@
 
         file_name = pathname.slice(1).join("/");
         // console.log(file_name)
-        console.log(pathname.slice(1).join("/"))
+        // console.log(pathname.slice(1).join("/"))
         for (let i = 1; i < pathname.length; i++) {
             delete pathname[i];
             // console.log(pathname)
@@ -33,23 +38,19 @@
 
     if (pathname.trim() == "discord" || pathname.trim() == "disc") {
         found_social = true;
-        window.location.href = "https://discord.com/users/408288183554670592"
-        return;
+        final = "https://discord.com/users/408288183554670592"
     }
-    if (pathname.trim() == "github" || pathname.trim() == "git" || pathname.trim() == "gh") {
+    else if (pathname.trim() == "github" || pathname.trim() == "git" || pathname.trim() == "gh") {
         found_social = true;
-        window.location.href = "https://github.com/nikeedev"
-        return;
+        final = "https://github.com/nikeedev"
     }
-    if (pathname.trim() == "youtube" || pathname.trim() == "yt") {
+    else if (pathname.trim() == "youtube" || pathname.trim() == "yt") {
         found_social = true;
-        window.location.href = "https://www.youtube.com/@nikeedev"
-        return;
+        final = "https://www.youtube.com/@nikeedev"
     }
-    if (pathname.trim() == "bluesky" || pathname.trim() == "bsky") {
+    else if (pathname.trim() == "bluesky" || pathname.trim() == "bsky") {
         found_social = true;
-        window.location.href = "https://bsky.app/profile/nikee.dev"
-        return;
+        final = "https://bsky.app/profile/nikee.dev"
     }
 
     const fileExt = [
@@ -86,25 +87,34 @@
         "py",
         "java",
         "go",
+        "cs"
     ];
 
     let found = false;
+    
+    pathname = save_for_file;
 
-    if (!found_social) {
+    if (!found_social) { 
+        console.log(pathname)
+        
         fileExt.forEach(a => {
             if (pathname.endsWith(a)) {
+                pathname = save_for_file.split("/");
                 found = true;
-                window.location.href = `https://github.com/nikeedev/${pathname}/blob/master${file_name}`;
-                return;
+                final = `https://github.com/nikeedev/${pathname[0]}/blob/master/${pathname[1]}`;
+                console.log(final);
             }
         });
     }
+    
+    pathname = save_for_file.split("/");
 
-    if (pathname.trim() == "" && !found) {
-        window.location.href = `/`
-        return;
-    } else {
-        window.location.href = `https://github.com/nikeedev/${pathname}/`;
-        return;
+
+    //console.log(pathname)
+    if (pathname[1] == undefined && !found) {
+        final = `https://github.com/nikeedev/${pathname[0]}/`;
     }
+    
+    console.log(final)
+    // window.location.href = final;
 })()
