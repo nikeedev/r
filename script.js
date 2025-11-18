@@ -48,7 +48,7 @@
     }
     if (pathname.trim() == "bluesky" || pathname.trim() == "bsky") {
         found_social = true;
-        window.location.href = "https://twitter.com/nikeedev"
+        window.location.href = "https://bsky.app/profile/nikee.dev"
         return;
     }
 
