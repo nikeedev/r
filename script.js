@@ -1,8 +1,8 @@
 (function () {
     let final = "";
-    let pathname = "/square/clean_square.png"
+    // let pathname = "/square/clean_square.png"
     // let pathname = "/square/"
-    // let pathname = window.location.pathname
+    let pathname = window.location.pathname
     // let pathname = final.split('?')[1];
 
     // console.log(pathname)
