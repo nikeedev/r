@@ -89,33 +89,13 @@
         "go",
         "cs"
     ];
-
-    let found = false;
     
-    pathname = save_for_file;
+    pathname = save_for_file.split('/');
 
-    if (!found_social) { 
-        // console.log(pathname)
-        
-        fileExt.forEach(a => {
-            // console.log(pathname)
-            if (pathname.endsWith(a)) {
-                let newpth = save_for_file.split("/");
-                found = true;
-                final = `https://github.com/nikeedev/${newpth[0]}/blob/master/${newpth[1]}`;
-            }
-            found
-        });
-    }
-    
-    pathname = save_for_file.split("/");
-
-
-    //console.log(pathname)
-    if (pathname[1] == undefined && !found) {
+    if (pathname[1] == undefined && !found_social) {
         final = `https://github.com/nikeedev/${pathname[0]}/`;
     }
-    
+
     // console.log(final)
     window.location.href = final;
 })()
