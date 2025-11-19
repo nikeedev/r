@@ -7,7 +7,7 @@ Usage:
 
 The basic redirections redirect to GitHub:
 
-- r.nikee.dev/square/clean_square.png -> (will redirect to) https://github.com/nikeedev/square/blob/master/clean_square.png
+Redirect to repo:
 - r.nikee.dev/rain -> https://github.com/nikeedev/rain-lang
 
 There is also redirections to my social pages:
