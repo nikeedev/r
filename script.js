@@ -52,43 +52,6 @@
         found_social = true;
         final = "https://bsky.app/profile/nikee.dev"
     }
-
-    const fileExt = [
-        "html",
-        "css",
-        "js",
-        "json",
-        "xml",
-        "txt",
-        "md",
-        "jpg",
-        "png",
-        "gif",
-        "svg",
-        "pdf",
-        "doc",
-        "docx",
-        "xls",
-        "xlsx",
-        "ppt",
-        "pptx",
-        "zip",
-        "tar",
-        "gz",
-        "mp3",
-        "mp4",
-        "wav",
-        "avi",
-        "mov",
-        "wmv",
-        "rs",
-        "cpp",
-        "c",
-        "py",
-        "java",
-        "go",
-        "cs"
-    ];
     
     pathname = save_for_file.split('/');
 
