@@ -16,7 +16,8 @@
 
     pathname = pathname.split('/'); 
     // console.log(pathname)
-
+    
+    /*
     let file_name;
     if (pathname.length >= 2) {
         // console.log("more than 1", pathname)
@@ -29,6 +30,7 @@
             // console.log(pathname)
         }
     }
+    */
 
 
     pathname = pathname.join("");
